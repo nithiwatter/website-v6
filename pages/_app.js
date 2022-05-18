@@ -11,7 +11,7 @@ const _app = ({ Component, pageProps }) => {
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Cardo&family=Lato&family=Montserrat&family=Oxygen&family=Playfair+Display:ital,wght@0,900;1,700&family=Raleway&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Merriweather&family=Lato&family=Montserrat&family=Oxygen&family=Playfair+Display:ital,wght@0,900;1,700&family=Raleway&display=swap" rel="stylesheet"></link>
       </Head>
 
       <Component {...pageProps} />

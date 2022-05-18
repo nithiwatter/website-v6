@@ -1,10 +1,11 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
+import Intro from "../components/Home/Intro";
 
 const Home = () => {
   return (
     <Layout>
       <div style={{ height: "160vh", }}>
-        <h1>Calix</h1>
+        <Intro/>
       </div>
     </Layout>
   )
