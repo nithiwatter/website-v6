@@ -1,7 +1,13 @@
-import Hero from "../components/Hero";
+import Layout from "../components/Layout";
 
-export default function Home() {
+const Home = () => {
   return (
-    <Hero />
+    <Layout>
+      <div style={{ height: "160vh", }}>
+        <h1>Calix</h1>
+      </div>
+    </Layout>
   )
 }
+
+export default Home;
