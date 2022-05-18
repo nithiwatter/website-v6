@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Footer = () => (
-  <div className="text-center py-5 px-5">
+  <div className="text-center pt-14 pb-5 px-5">
     <p className="mb-2 text-gray-500 text-sm">
       <img className="text-gray-500 w-3 mb-1 mr-0.5 inline" src="/icons/cross.svg" /> Colossians 3:17
     </p>
