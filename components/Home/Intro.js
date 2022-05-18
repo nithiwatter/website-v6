@@ -22,16 +22,20 @@ const Intro = () => {
           </a>
         </div>
       </div>
-      <div className="space-y-5 text-md text-gray-700">
+      <div className="space-y-5 text-md text-gray-700" id="telescopic">
         <h1 className="text-gray-900">Hey, I'm Calix. I love software and storytelling.</h1>
 
-        <p>I’m an incoming student at the <a className="cursor-pointer underline" href="https://iovine-young.usc.edu" target="_blank">USC Iovine and Young Academy</a>.</p>
+        <div>
+          I’m an incoming <a className="highlight" data-o="1">student</a> <span data-ob="1">studying Design, Technology, Business, and Communication</span> at the <a className="cursor-pointer underline" href="https://iovine-young.usc.edu" target="_blank">USC Iovine and Young Academy</a>.
+        </div>
 
-        <p>I love <Link href="/software"><span className="cursor-pointer underline">building software</span></Link>, <Link href="/writing"><span className="cursor-pointer underline">telling stories</span></Link>, and making memories.</p>
+        <div>
+          I love <Link href="/software"><p className="cursor-pointer underline">building software</p></Link>, <Link href="/writing"><p className="cursor-pointer underline">telling stories</p></Link>, and <a className="highlight" data-o="2">making memories</a>. <span data-ob="2">I'm constantly documenting life through <a className="highlight" data-o="3">words</a> and <Link href="/life-in-photos"><p className="cursor-pointer underline">photos</p></Link>.</span> <span data-ob="3">I often take time to write publish <Link href="/writing/?tag=reflections"><p className="cursor-pointer underline">monthly reflections</p></Link> and save my memories day-by-day in <a href="https://myrecollect.com" target="_blank">Recollect</a>.</span>
+        </div>
 
-        <p>I’ve previously founded startups and I now currently lead Labs at <a className="cursor-pointer underline" href="https://fiveable.me" target="_blank">Fiveable</a>.</p>
+        <div>I’ve previously <a className="highlight" data-o="4">founded startups</a><span data-ob="4">, <Link href="/writing/hours-acquired-by-fiveable"><p className="cursor-pointer underline">sold them</p></Link>,</span> and I now currently lead <a className="highlight" data-o="5">Labs</a><span data-ob="5">, a department testing early product hypotheses,</span> at <a className="cursor-pointer underline" href="https://fiveable.me" target="_blank">Fiveable</a>.</div>
 
-        <p>Explore my <Link href="/writing/failures"><span className="cursor-pointer underline">failures</span></Link>, <Link href="/life-in-photos"><span className="cursor-pointer underline">life in photos</span></Link>, and recent <Link href="/writing/april-2022"><span className="cursor-pointer underline">April</span></Link> reflection.</p>
+        <div>Explore my <Link href="/writing/failures"><p className="cursor-pointer underline">failures</p></Link>, <Link href="/life-in-photos"><p className="cursor-pointer underline">life in photos</p></Link>, and recent <Link href="/writing/april-2022"><p className="cursor-pointer underline">April</p></Link> reflection.</div>
       </div>
     </div>
   )

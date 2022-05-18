@@ -18,3 +18,56 @@ h1 {
   font-weight: 700;
   font-family: "Cardo", serif;
 }
+
+.highlight {
+  background-color: rgb(255,213,65);
+  border-radius: 5px;
+  padding: 3px 4px;
+}
+
+#telescopic {
+  div {
+    line-height: 28px;
+  }
+  p { display: inline-block; }
+  a:not(.highlight) { text-decoration: underline; }
+  span {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    /* display: none; */
+    transform-origin: top;
+    transition: all 0.5s ease;
+  }
+  
+  span.indicator {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+    height: 2px;
+    width: 2px;
+    border: 0.5px solid var(--main);
+  
+    display: inline-block;
+  }
+  
+  span.active {
+    background-color: var(--main);
+  }
+  
+  span.there {
+    position: relative;
+    display: inline;
+    visibility: hidden;
+    opacity: 0;
+  }
+  span.on {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    display: inline;
+    transform: scaleY(1);
+    /* display: inline; */
+  }
+}
