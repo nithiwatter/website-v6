@@ -13,10 +13,21 @@ body, .bg-custom {
   font-family: "Playfair Display", serif;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: "Cardo", serif;
+  font-weight: 700;
+}
+
 h1 {
   font-size: 30px !important;
-  font-weight: 700;
-  font-family: "Cardo", serif;
+}
+
+h2 {
+  font-size: 25px !important;
+}
+
+h3 {
+  font-size: 20px !important;
 }
 
 .highlight {

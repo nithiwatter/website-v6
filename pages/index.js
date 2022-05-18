@@ -1,12 +1,12 @@
 import Layout from "../components/Layout/Layout";
 import Intro from "../components/Home/Intro";
+import Experience from "../components/Home/Experience";
 
 const Home = () => {
   return (
     <Layout>
-      <div style={{ height: "160vh", }}>
-        <Intro/>
-      </div>
+      <Intro/>
+      <Experience/>
     </Layout>
   )
 }
