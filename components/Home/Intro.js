@@ -5,8 +5,8 @@ const Intro = () => {
     <div className="flex flex-row py-14 space-x-14">
       <div>
         <img
-          className="rounded-full drop-shadow-2xl"
-          style={{ minWidth: 175, width: 175 }}
+          className="rounded-full"
+          style={{ minWidth: 175, width: 175, boxShadow: "0 5px 15px rgba(0,0,0,.2)" }}
           src="https://www.calix.dev/img/people/calix2.jpeg"
           alt="Calix Headshot"
         />
