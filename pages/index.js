@@ -1,6 +1,7 @@
 import Layout from "../components/Layout/Layout";
 import Intro from "../components/Home/Intro";
 import Experience from "../components/Home/Experience";
+import Journey from "../components/Home/Journey";
 import Contact from "../components/Home/Contact";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <Layout>
       <Intro/>
       <Experience/>
+      <Journey/>
       <Contact/>
     </Layout>
   )
