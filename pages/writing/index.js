@@ -41,7 +41,7 @@ const writing = ({ allPosts }) => {
         <p className="mt-2 text-gray-600">I'm not the best writer, but I love telling stories.</p>
       </div>
 
-      <div className="py-10" id="blogs">
+      <div className="py-10" id="posts">
         {tag ?
           <div className="mb-14">
             <Link href="/writing"><span className="text-sm text-gray-500 cursor-pointer mb-3">&larr; Back</span></Link>
@@ -51,31 +51,31 @@ const writing = ({ allPosts }) => {
         <div className="flex md:flex-row flex-col flex-col-reverse justify-between md:space-x-10">
           <div>
             <div className="space-y-14">
-              {posts.filter(b => tag ? b.frontmatter.tag == tag : true).map((blog, i) => (
+              {posts.filter(b => tag ? b.frontmatter.tag == tag : true).map((post, i) => (
                 <div className="flex sm:flex-row flex-col sm:items-center sm:space-x-8 cursor-pointer" key={i}>
-                  <Link href={`/writing/${blog.slug}`}>
+                  <Link href={`/writing/${post.slug}`}>
                     <img
                       className="rounded-md sm:w-56 w-full"
                       style={{ boxShadow: "0 5px 10px rgba(0,0,0,.2)" }}
-                      src={blog.frontmatter.hero_image}
-                      alt={`${blog.frontmatter.title}`}
+                      src={post.frontmatter.hero_image}
+                      alt={`${post.frontmatter.title}`}
                     />
                   </Link>
                   <div className="md:mt-0 mt-5">
-                    <Link href={`/writing/${blog.slug}`}>
+                    <Link href={`/writing/${post.slug}`}>
                       <div>
-                        <h3>{blog.frontmatter.title}</h3>
+                        <h3>{post.frontmatter.title}</h3>
                         <p className="text-gray-500 text-md mt-1">
-                          <ReactMarkdown source={blog.frontmatter.preview} />
+                          <ReactMarkdown source={post.frontmatter.preview} />
                         </p>
                       </div>
                     </Link>
 
                     {tag ?
-                      <p className="text-gray-400 text-sm mt-3">{reformatDate(blog.frontmatter.date)}</p>
+                      <p className="text-gray-400 text-sm mt-3">{reformatDate(post.frontmatter.date)}</p>
                       :
                       <p className="text-gray-400 text-sm mt-3">
-                        {reformatDate(blog.frontmatter.date)} in <Link href={`/writing/?tag=${blog.frontmatter.tag}`}><a className="italic text-gray-600" href="#">#{blog.frontmatter.tag}</a></Link>
+                        {reformatDate(post.frontmatter.date)} in <Link href={`/writing/?tag=${post.frontmatter.tag}`}><a className="italic text-gray-600" href="#">#{post.frontmatter.tag}</a></Link>
                       </p>
                     }
                   </div>

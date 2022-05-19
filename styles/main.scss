@@ -8,11 +8,6 @@ body, .bg-custom {
   // background-color: #EFE3D5;
 }
 
-// #blogs h2, #blogs h3 {
-//   font-family: "Merriweather", serif !important;
-//   font-weight: bold;
-// }
-
 .name {
   font-size: 30px;
   font-weight: 900;
@@ -87,5 +82,56 @@ h3 {
     display: inline;
     transform: scaleY(1);
     /* display: inline; */
+  }
+}
+
+.blog-content {
+  & h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  & h2 {
+    font-size: 30px !important;
+  }
+
+  & h3 {
+    font-size: 25px !important;
+  }
+
+  // & p, ul, ol, li {
+  //   color: #ddd;
+  // }
+
+  & img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+  }
+
+  & p {
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  & li p {
+    margin-bottom: 5px;
+  }
+
+  & hr {
+    border-color: #cbd5e1;
+    border-width: 1px;
+    margin-bottom: 2rem !important;
+  }
+
+  & a {
+    text-decoration: none;
+    border-bottom: 2px dotted #334155;
+    color: #334155;
+
+    &:hover {
+      border-bottom: 2px solid #334155;
+      color: #334155;
+    }
   }
 }

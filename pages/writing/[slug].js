@@ -5,12 +5,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import ReactAudioPlayer from "react-audio-player";
 const glob = require('glob')
 
-import Layout from '../../components/Layout'
+import Layout from '../../components/Layout/Layout'
 
-export default function BlogTemplate({ frontmatter, markdownBody }) {
+export default function Post({ frontmatter, markdownBody }) {
   const router = useRouter();
 
   function reformatDate(fullDate) {
@@ -35,44 +34,36 @@ export default function BlogTemplate({ frontmatter, markdownBody }) {
         <meta property="twitter:image" content={frontmatter.hero_image} key="ogimage" />
       </Head>
 
-      <section id="blog-content">
-          <div className="blog-container">
-            <img
-                src={frontmatter.hero_image}
-                alt={`${frontmatter.title}`}
-            />
-            <div className="blog-header">
-              <Link href="/blog"><span className="back-arrow mb-3">&larr; Back</span></Link>
-              <h1 className="header-fourth">{frontmatter.title}</h1>
-              <h3 className="subheader d-block pt-2 blog-info">
-                  {reformatDate(frontmatter.date)} in <Link href={`/blog/?tag=${frontmatter.tag}`}><a href="#">#{frontmatter.tag}</a></Link>
-              </h3>
-            </div>
-            {frontmatter.audio ?
-              <div className="blog-audio">
-                <ReactAudioPlayer
-                  src={frontmatter.audio}
-                  controls
-                  controlsList="nodownload"
-                />
-              </div> : ""
-            }
-            <div className="blog-body">
-                <ReactMarkdown
-                  source={markdownBody}
-                  renderers={{ link: LinkRenderer }}
-                />
-            </div> 
+      <div className="py-14 flex md:flex-row flex-col md:space-x-14 space-x-0 md:space-y-0 space-y-10">
+        <div className="md:w-72 w-full">
+          <img
+            className="rounded-md"
+            style={{ minWidth: 300, boxShadow: "0 5px 10px rgba(0,0,0,.2)" }}
+            src={frontmatter.hero_image}
+            alt={`${frontmatter.title}`}
+          />
+          <div className="mt-5">
+            <h3>{frontmatter.title}</h3>
+            <p className="text-gray-500 text-md mt-1">{frontmatter.preview}</p>
+            <p className="text-gray-400 text-sm mt-3">
+              {reformatDate(frontmatter.date)} in <Link href={`/writing/?tag=${frontmatter.tag}`}><a className="italic text-gray-600" href="#">#{frontmatter.tag}</a></Link>
+            </p>
           </div>
-      </section>
-      
+        </div>
+        <div className="blog-content text-gray-600">
+          <ReactMarkdown
+            source={markdownBody}
+            renderers={{ link: LinkRenderer }}
+          />
+        </div>
+      </div>
     </Layout>
   )
 }
 
 export async function getStaticProps({ ...ctx }) {
   const { slug } = ctx.params
-  const content = await import(`../../blogs/${slug}.md`)
+  const content = await import(`../../posts/${slug}.md`)
   const data = matter(content.default)
 
   return {
@@ -85,10 +76,10 @@ export async function getStaticProps({ ...ctx }) {
 
 export async function getStaticPaths() {
   //get all .md files in the posts dir
-  const blogs = glob.sync('blogs/**/*.md')
+  const posts = glob.sync('posts/**/*.md')
 
   //remove path and extension to leave filename only
-  const blogSlugs = blogs.map(file =>
+  const postSlugs = posts.map(file =>
     file
       .split('/')[1]
       .replace(/ /g, '-')
@@ -97,7 +88,7 @@ export async function getStaticPaths() {
   )
 
   // create paths with `slug` param
-  const paths = blogSlugs.map(slug => `/blog/${slug}`)
+  const paths = postSlugs.map(slug => `/writing/${slug}`)
   return {
     paths,
     fallback: false,
