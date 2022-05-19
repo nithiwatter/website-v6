@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Intro = () => {
   return (
-    <div className="flex md:flex-row flex-col py-14 md:space-x-14 space-x-0 md:space-y-0 space-y-8">
+    <div id="dots" className="flex md:flex-row flex-col py-14 md:space-x-14 space-x-0 md:space-y-0 space-y-8">
       <div className="mx-auto" style={{ minWidth: 175, width: 175 }}>
         <img
           className="rounded-full"
