@@ -7,7 +7,7 @@ const Intro = () => {
         <img
           className="rounded-full"
           style={{ boxShadow: "0 5px 15px rgba(0,0,0,.2)" }}
-          src="https://www.calix.dev/img/people/calix2.jpeg"
+          src="/photos/calix.jpeg"
           alt="Calix Headshot"
         />
         <div className="flex flex-row items-center justify-center space-x-2 mt-5">
