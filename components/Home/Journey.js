@@ -50,11 +50,11 @@ const Journey = () => {
   return (
     <div className="py-14 space-y-5">
       <h3>My Journey</h3>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
         {journey.map((year) => (
-          <div>
+          <div className="space-y-2">
             <h3>{year.year}</h3>
-            <ul className="list-disc text-gray-600 pl-4">
+            <ul className="space-y-1 list-disc text-gray-600 pl-4">
               {year.items.map((item) => (
                 <li>{item}</li>
               ))}

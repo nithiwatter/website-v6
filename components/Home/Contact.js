@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <div className="py-14 space-y-5">
       <h3>Contact</h3>
-      <div className="grid grid-cols-2 space-x-14">
+      <div className="grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:space-x-14 space-x-0 md:space-y-0 space-y-8">
         <div className="space-y-5 text-gray-500">
           <p>I'm always happy to chat, whether it's about work, interests, hobbies, or even just the weather.</p>
           <p>Never hesitate to send a message my way :)</p>

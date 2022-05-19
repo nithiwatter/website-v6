@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const Intro = () => {
   return (
-    <div className="flex flex-row py-14 space-x-14">
-      <div>
+    <div className="flex md:flex-row flex-col py-14 md:space-x-14 space-x-0 md:space-y-0 space-y-8">
+      <div className="mx-auto" style={{ minWidth: 175, width: 175 }}>
         <img
           className="rounded-full"
-          style={{ minWidth: 175, width: 175, boxShadow: "0 5px 15px rgba(0,0,0,.2)" }}
+          style={{ boxShadow: "0 5px 15px rgba(0,0,0,.2)" }}
           src="https://www.calix.dev/img/people/calix2.jpeg"
           alt="Calix Headshot"
         />

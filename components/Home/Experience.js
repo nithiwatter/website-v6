@@ -111,7 +111,7 @@ const Experience = () => {
 
 
   return (
-    <div className="grid grid-cols-2 py-14 space-x-14">
+    <div className="grid sm:grid-cols-2 grid-cols-1 py-14 sm:space-x-14 space-x-0 md:space-y-0 space-y-14">
       <div className="space-y-10">
         <h3>Currently</h3>
         {currently.map((experienceEntry) => (
